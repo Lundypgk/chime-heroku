@@ -7,7 +7,6 @@ var express = require('express'),
   http = require('http'),
   path = require('path'),
   bodyParser = require('body-parser'),
-  favicon = require('serve-favicon'),
   logger = require('morgan'),
   methodOverride = require('method-override');
 
