@@ -6,9 +6,7 @@ var express = require('express'),
   //routes = require('./routes'),
   http = require('http'),
   path = require('path'),
-  bodyParser = require('body-parser'),
-  logger = require('morgan'),
-  methodOverride = require('method-override');
+  bodyParser = require('body-parser');
 
 var viewDirectory = path.join(__dirname, 'views');
 var app = express();
@@ -16,11 +14,9 @@ var app = express();
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 
-app.use(logger('dev'));
 app.use(bodyParser.urlencoded({
   extended: false
 }));
-app.use(methodOverride('_method'));
 app.use(require('stylus').middleware(__dirname + '/views'));
 app.use(express.static(viewDirectory,{index:false,extensions:['html']}));
 
