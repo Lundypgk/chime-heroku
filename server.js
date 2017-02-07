@@ -17,7 +17,6 @@ app.set('views', __dirname + '/views');
 app.use(bodyParser.urlencoded({
   extended: false
 }));
-app.use(require('stylus').middleware(__dirname + '/views'));
 app.use(express.static(viewDirectory,{index:false,extensions:['html']}));
 
 
