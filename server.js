@@ -29,7 +29,7 @@ let MongoClient = require('mongodb').MongoClient
 MongoClient.connect('mongodb://shengliang:chime@ds145009.mlab.com:45009/chime', (err, database) => {
     if (err) return console.log(err)
     db = database
-    app.listen(3000, () => {
+    app.listen(process.env.PORT || 3000, () => {
         console.log('listening on 3000')
     })
 })
