@@ -1,6 +1,7 @@
 /**
  * Module dependencies.
  */
+"use strict";
 let express = require('express'),
     //routes = require('./routes'),
     http = require('http'),
@@ -24,7 +25,7 @@ if (app.get('env') == 'development') {
     app.locals.pretty = true;
 }
 
-let MongoClient = require('mongodb').MongoClient
+let MongoClient = require('mongodb').MongoClient;
 
 MongoClient.connect('mongodb://shengliang:chime@ds145009.mlab.com:45009/chime', (err, database) => {
     if (err) return console.log(err)
