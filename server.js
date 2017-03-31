@@ -11,7 +11,7 @@ let express = require('express'),
 let viewDirectory = path.join(__dirname, 'views');
 let app = express();
 
-app.set('port', process.env.PORT || 3000);
+// app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 
 app.use(bodyParser.urlencoded({
