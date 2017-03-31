@@ -1,19 +1,57 @@
 /* Media Queries
 -------------------------------------------------------------- */
 @media only screen and (max-width: 1366px) {
-	
+
+	.media-img-pad
+	{
+		width:50%;
+	}
+	.media-img-pho
+	{
+		width:30%;
+	}
+	.toTop{
+		    left: 92%;
+    top: 95%;
+	}
 	
 }
+
+
 
 /* Smaller than standard 1200 */
 @media only screen and (max-width: 1199px) {
 	#mainnav > ul > li > a {
 		padding: 0 15px 0 15px;
 	}
+	.joinus-button
+	{
+		margin-left:4%;
+	}
+	.navbar-default .navbar-nav > li > a
+	{
+		    margin: 0px 5px;
+	}
 }
 
 /* Smaller than standard 992 */
 @media only screen and (max-width: 991px) {
+		.navbar-default .navbar-nav > li > a
+	{
+		    margin: 0px -2px;
+    font-size: 0.8em;
+	}
+	
+	.home-bar
+	{
+		margin-left: 12%;
+		margin-right: 10%;
+	}
+		.joinus-button
+	{
+		margin-left:12%;
+	}
+	
 	.btn-menu {
 		display: block ;
 	}
@@ -151,6 +189,11 @@
 		padding-left: 0;
 		margin-left: 0;
 	}
+	
+		.media-img-pad,
+	.media-img-pho{
+		display: none;
+	}
 
 	.blog-single .direction ul li ul.social-icons {
 		margin-top: 0;
@@ -217,11 +260,72 @@
 
 /* Tablet Portrait Size */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-	
+	.mobile-form
+	{
+		margin:0% 17%;
+	}
 }
 
 /* All Mobile Sizes */
 @media only screen and (max-width: 767px) {
+	.su2title{
+		font-size: 2em;
+	}
+		.mobile-form
+	{
+		    margin: 0% 12%;
+    width: 80%;
+	}
+	.signup-button
+	{
+		width:60%;
+	}
+	
+	.navbar-collapse > ul > li.home > a {
+   color: #FACB1B ;
+   position: relative;
+	padding-bottom:0px;
+	
+}
+		.navbar-collapse ul li a:hover
+	{
+		border-bottom:0px;
+	}
+	.navbar-collapse ul li
+	{
+		width:100%;
+		height: 10px;
+	}
+	ul.nav.navbar-nav.navbar-right
+	{
+		margin-top:0px;
+		height:inherit;
+		background:#f8f8f8;
+		    text-align: center;
+		    width:100%;
+		    padding-bottom:10px;
+	}
+	.navbar-default .navbar-collapse, .navbar-default .navbar-form
+	{
+	border-color: #e7e7e7;
+    padding: 0px;
+    margin-top: 68px;
+    width: 70%;
+    margin-left: 100px;
+	}
+	
+	.navbar-collapse > ul > li > a:hover, .navbar-collapse > ul > li.home > a
+	{
+		padding: 0px 10px;
+		line-height: 0px; 
+	}
+	
+	.navbar-collapse > ul > li > a:hover,
+.navbar-collapse > ul > li.home > a {
+	{
+		
+	}
+	
 	.requestform p,
 	.item-two-column {
 		width: 100%;
@@ -300,7 +404,7 @@
 	.tp-caption.element-slider {
 		display: none !important;
 	}
-	
+
 }
 
 /* Mobile Landscape Size */
@@ -308,6 +412,7 @@
 	.flat-portfolio.grid-3columns .item {
 		width: 50%;
 	}
+	
 }
 
 /* Mobile Portrait Size */
@@ -364,9 +469,45 @@
 		height: 35px;
 		line-height: 35px;
 	}
+	.toTop
+	{
+		left: 84%;
+    top: 92%;
+	}
+	
+		.influencer-button,
+	.joinus-button
+	{
+		margin-left: 0px !important;
+		
+	}
+	
+	.home-bar
+	{
+		text-align: center;
+	}
+	.intro-header
+	{
+		    font-size: 26px !important;
+    font-weight: inherit !important;
+	}
+	.brand-chime
+	{
+		width:50%;
+		margin-left: 0px;
+	}
+	.influencer-button
+{
+	font-size: 0.9em !important;
+}	
 }
 
 @media (max-width: 320px) {	
-	
+	.toTop
+	{
+		left: 80%;
+    top: 90%;
+	}
+
 }
 

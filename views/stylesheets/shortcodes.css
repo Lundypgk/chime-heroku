@@ -200,6 +200,7 @@
     position: relative;
     padding: 90px 0;    
     overflow: hidden;
+    background:#f9f9f9;
 }
 
 .flat-row.row-getaudit {
@@ -233,6 +234,7 @@
 
 .white { color:#fff; }
 .blue { color:#FACB1B;}
+.bold { font-weight: bold; }
 .flat-row.background-color {
     background-color: #fafafa;
 }
@@ -360,6 +362,98 @@
     color: #fff;
 }
 
+
+.headerbg  { background-image: url(../images/slides/bg.jpg);}
+.headerbg2  { background-image: url(../images/bg2.png);}
+.headerbg3 { background-image: url(../images/influencer-login.png);}
+.headerbg4 { background-image: url(../images/brand-login.png);}
+
+.brand-chime{
+    margin-left:15%;
+}
+.chime-logo
+{
+    width: 160px;
+    margin-top: -15px;
+    float: left;
+}
+.navbar-right
+{
+    margin-top:10px;
+}
+
+.navbar-default .navbar-nav > li > a
+{
+        color: #777;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+    color: #1c1c1c;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    /* line-height: 100px; */
+    margin: 0 20px 0 20px;
+    display: inline-block;
+}
+
+ul.nav.navbar-nav.navbar-right {
+    height: 80px;
+    margin-top: -30px;
+}
+
+
+.navbar
+{
+    margin-bottom:0px;
+    height:70px;
+    
+}
+.navbar-toggle .icon-bar
+{
+    background: #FACB1B;
+}
+.navbar-toggle
+{
+    margin-top: 15px;
+}
+
+.joinus-button{
+    height: 70%;    
+    margin-left: 12% !important;    
+    background: none;    
+    border-bottom: 2px solid #faCB1b;
+}
+.home-bar
+{
+    text-align:center; 
+    background-color:rgba(131,131,131,0.8); 
+    padding:25px; margin-left:25%; 
+    text-align:left;
+}
+
+.influencer-button
+{
+    height:80%;
+    margin-left:5% !important;
+}
+.intro-header
+{
+    font-size:3em; 
+    color:#fff; 
+    padding-top:3%;
+}
+
+	.mobile-form
+	{
+	    text-align:center; 
+	    margin:0% 21%;
+	    width: 66.66666667%;
+	}
+	.signup-button
+	{
+	    width:40%; margin:2% auto 30px auto; border-radius:25px; 
+	}
+
 /* Empy space
 -------------------------------------------------------------- */
 .empty-space {
@@ -429,9 +523,9 @@
 }
 
 .iconbox:hover .box-header img {
-    -webkit-transform: rotateY(-180deg);
+   /* -webkit-transform: rotateY(-180deg);
     -ms-transform: rotateY(-180deg);
-    transform: rotateY(-180deg);
+    transform: rotateY(-180deg); */
 }
 
 
@@ -2694,7 +2788,18 @@ ul.flat-list.use-icon li:after {
     height: 360px;
 }
  
+/* FAQ Styling*/
 
+.FAQ-col{
+	text-align:left; 
+	margin:1% 5% 2%;
+	font-size:1.4em;
+	
+}
+.FAQ-ans {
+    margin-top:2%;
+    font-size:0.8em;
+}
 
     
 
