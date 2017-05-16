@@ -1,9 +1,5 @@
-/**
- * Module dependencies.
- */
 "use strict";
 let express = require('express'),
-    //routes = require('./routes'),
     http = require('http'),
     path = require('path'),
     bodyParser = require('body-parser'),
@@ -18,7 +14,10 @@ app.set('views', __dirname + '/views');
 app.use(bodyParser.urlencoded({
     extended: false
 }));
-app.use(express.static(viewDirectory, { index: false, extensions: ['html'] }));
+app.use(express.static(viewDirectory, {
+    index: false,
+    extensions: ['html']
+}));
 
 
 if (app.get('env') == 'development') {
@@ -35,12 +34,12 @@ MongoClient.connect('mongodb://shengliang:chime@ds145009.mlab.com:45009/chime', 
     })
 })
 
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
     // res.redirect('home.html');
-    res.sendFile(viewDirectory + '/home.html');
+    res.redirect('/home');
 });
 
-app.get('/login', function(req, res) {
+app.get('/login', function (req, res) {
     // res.redirect('login.html')
     res.sendFile(viewDirectory + '/login.html');
 });
@@ -64,8 +63,8 @@ app.post('/brandSignUp', (req, res) => {
 });
 
 //Catch all other routes
-app.get('/*', function(req, res) {
-    res.redirect('home.html');
+app.get('/*', function (req, res) {
+    res.redirect('/');
 });
 
 
