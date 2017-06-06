@@ -36,7 +36,7 @@ MongoClient.connect('mongodb://shengliang:chime@ds145009.mlab.com:45009/chime', 
 
 app.get('/', function (req, res) {
     // res.redirect('home.html');
-    res.redirect('/home');
+    res.redirect('/index');
 });
 
 app.get('/login', function (req, res) {
