@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <!-- Meta -->
     <meta charset="utf-8">
@@ -35,51 +36,57 @@
     <!-- FAV ICON -->
     <link href="assets/img/Logos/bell.png" rel="shortcut icon">
 </head>
+
 <body>
     <!--START SIGNUP-->
     <section class="flat-row" style="height:65px; background:#fff; padding:0px;">
         <div id="logo" class="logo" style="text-align:center; height:100%;">
-            <a href="index.html" rel="home">
+            <a href="index" rel="home">
                 <img style="height:100%;" src="assets/img/Logos/chimemaybe-black.png">
             </a>
-            </div>
+        </div>
     </section>
-
     <!-- Get audit -->
     <section class="flat-row" style="background:#f9f9f9; padding:20px;">
         <div class="row-overlay"></div>
         <div class="container">
-            <h1 class="title" style="text-align:center;">Register Your <span class="blue">Brand</span> With Chime</h1><br>
+            <h1 class="title" style="text-align:center;">APPLY TO BE A <span class="blue">CHIMER</span></h1><br>
             <div class="mobile-form">
-                <textarea class="form-input2" cols="40" rows="5" placeholder="*Enter Brand Description"></textarea>
-              
-                <input class="form-input2" type="Text" placeholder="Job Perks (eg. 20% off total bill)" />
-                <textarea class="form-input2" cols="40" rows="5" placeholder="*Job Requirements (eg. Tag #brandName and Tag location ) "></textarea>
-           
-                <input class="form-input" type="text" placeholder="Campaign Budget" />
-               
+                <input class="form-input" id="firstName" type="text" placeholder="First Name" name="firstName" onkeyup="this.value=this.value.replace(/[^a-z]/g,'');"
+                />
+                <input class="form-input" id="lastName" type="text" placeholder="Last Name" name="lastName" onkeyup="this.value=this.value.replace(/[^a-z]/g,'');"
+                />
+
+                <select class="form-input" id="gender" name="gender">
+                    <option value="">-- Select Gender --</option>
+                    <option value="Male">Male</option>
+                    <option value="Male">Female</option>
+                    </select>
+                <input class="form-input" id="birthday" type="Date" placeholder="Birthday" name="birthday" />
+                <input class="form-input2" id="mobileNo" type="number" maxlength="11" min="8" placeholder="Mobile Number" name="mobileNo"
+                />
+                <input class="form-input2" id="email" type="email" placeholder="Email Address" name="email" />
+                <input class="form-input2" id="password" type="Password" placeholder="Password" />
+                <input class="form-input2" id="confirmPassword" type="Password" placeholder="Confirm Password" name="password" />
+
 
             </div>
 
             <div class="col-xs-12" style="text-align:center;">
-                <a href="payment.html"><input class="btn btn-primary btn-submit" type="submit" text="Login" /></a>
+                <input class="btn btn-primary btn-submit" type="submit" text="Login" id="submit" value="submit" /></a>
             </div>
         </div>
     </section>
     <section class="flat-row" style="height:65px; background:#fff; padding:0px;">
         <div id="logo" class="logo" style="text-align:center; height:100%;">
-            <a href="index.html" rel="home">
+            <a href="index" rel="home">
                 <img style="height:100%;" src="assets/img/Logos/chimemaybe-black.png">
             </a>
-            </div>
+        </div>
     </section>
 
 
     <!--END SIGNUP-->
-
-
-
-
 
     <!-- Latest jQuery -->
     <script src="assets/js/jquery-1.11.3.min.js"></script>
@@ -107,5 +114,10 @@
     <script src="assets/js/switcher.js"></script>
     <!-- scripts js -->
     <script src="assets/js/scripts.js"></script>
+    <!-- Sign Up Validation -->
+    <script src="assets/js/signup-chimer-validation.js"></script>
+    <!-- Notify JS -->
+    <script src="assets/js/notify.js"></script>
 </body>
+
 </html>

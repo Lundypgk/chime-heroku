@@ -46,35 +46,38 @@
             </a>
         </div>
     </section>
+
     <!-- Get audit -->
     <section class="flat-row" style="background:#f9f9f9; padding:20px;">
         <div class="row-overlay"></div>
         <div class="container">
-            <h1 class="title" style="text-align:center;">APPLY TO BE A <span class="blue">CHIMER</span></h1><br>
+            <h1 class="title" style="text-align:center;">Register Your <span class="blue">Brand</span> With Chime</h1><br>
             <div class="mobile-form">
-                <input class="form-input" id="firstName" type="text" placeholder="First Name" name="firstName" onkeyup="this.value=this.value.replace(/[^a-z]/g,'');"
-                />
-                <input class="form-input" id="lastName" type="text" placeholder="Last Name" name="lastName" onkeyup="this.value=this.value.replace(/[^a-z]/g,'');"
-                />
-                <input class="form-input2" id="email" type="email" placeholder="Email Address" name="email" />
+                <input class="form-input2" type="text" placeholder="Your brand Name" id="brandName" />
+                <select class="form-input" id="industry">
+                    <option value="">-- Select Industry --</option>
+                    <option value="FnB">Food And Beverage</option>
+                    <option value="FnR">Fashion And Retail</option>
+                    <option value="Ser">Services</option>
+                    <option value="Oth">Others</option>
+                </select>
+                <input class="form-input" type="number" maxlength="8" placeholder="Contact Number" id="contactNo" />
 
-                <select class="form-input" id="gender" name="gender">
-                    <option value="">-- Select Gender --</option>
-                    <option value="Male">Male</option>
-                    <option value="Male">Female</option>
-                    </select>
-                <input class="form-input" id="birthday" type="Date" placeholder="Birthday" name="birthday" />
-                <input class="form-input2" id="mobileNo" type="number" maxlength="11" min="8" placeholder="Mobile Number" name="mobileNo"
-                />
-                <input class="form-input2" id="username" type="text" placeholder="Username" name="username" />
-                <input class="form-input2" id="password" type="Password" placeholder="Password" />
-                <input class="form-input2" id="confirmPassword" type="Password" placeholder="Confirm Password" name="password" />
+                <input class="form-input2" type="Text" placeholder="Address" id="address" />
+                <input class="form-input" type="number" maxlength="6" placeholder="Postal Code" id="postal" />
+
+                <input class="form-input" type="text" placeholder="Unit Number" id="unitNo" />
+                <input class="form-input" type="text" placeholder="Instagram Page" id="instagram" />
+                <input class="form-input" type="text" placeholder="Facebook Page" id="facebook" />
+                <input class="form-input2" type="text" placeholder="Email" id="email" />
+                <input class="form-input2" type="Password" placeholder="Password" id="password" />
+                <input class="form-input2" type="Password" placeholder="Confirm Password" id="confirmPassword" />
 
 
             </div>
 
             <div class="col-xs-12" style="text-align:center;">
-                <input class="btn btn-primary btn-submit" type="submit" text="Login" id="submit" value="submit" /></a>
+                <input class="btn btn-primary btn-submit" id="submit" type="submit" text="Login" />
             </div>
         </div>
     </section>
@@ -88,6 +91,10 @@
 
 
     <!--END SIGNUP-->
+
+
+
+
 
     <!-- Latest jQuery -->
     <script src="assets/js/jquery-1.11.3.min.js"></script>
@@ -116,7 +123,7 @@
     <!-- scripts js -->
     <script src="assets/js/scripts.js"></script>
     <!-- Sign Up Validation -->
-    <script src="assets/js/signup-chimer-validation.js"></script>
+    <script src="assets/js/signup-brand-validation.js"></script>
     <!-- Notify JS -->
     <script src="assets/js/notify.js"></script>
 </body>

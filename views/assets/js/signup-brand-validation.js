@@ -1,4 +1,15 @@
 $("#submit").click(function () {
+    var brandNameValidation = false,
+        industryValidation = false,
+        contactNoValidation = false,
+        addressValidation = false,
+        postalValidation = false,
+        unitNoValidation = false,
+        instagramValidation = false,
+        facebookValidation = false,
+        emailValidation = false,
+        passwordValidation = false
+    confirmPasswordValidation = false;
 
     //Validation for First Name
     if (!$('#brandName').val()) {
@@ -10,6 +21,7 @@ $("#submit").click(function () {
         );
     } else {
         $("#brandName").css('border-color', '');
+        brandNameValidation = true;
     }
 
     //Validation for Industry
@@ -22,6 +34,7 @@ $("#submit").click(function () {
         );
     } else {
         $("#industry").css('border-color', '');
+        industryValidation = true;
     }
 
     //Validation for mobileno
@@ -34,6 +47,7 @@ $("#submit").click(function () {
         );
     } else {
         $("#contactNo").css('border-color', '');
+        contactNoValidation = true;
     }
 
     //Validation for address
@@ -46,6 +60,7 @@ $("#submit").click(function () {
         );
     } else {
         $("#address").css('border-color', '');
+        addressValidation = true;
     }
 
     //Validation for postal
@@ -58,6 +73,7 @@ $("#submit").click(function () {
         );
     } else {
         $("#postal").css('border-color', '');
+        postalValidation = true;
     }
 
     //Validation for unit number
@@ -70,6 +86,7 @@ $("#submit").click(function () {
         );
     } else {
         $("#unitNo").css('border-color', '');
+        unitNoValidation = true;
     }
 
     //Validation for instagram page
@@ -82,6 +99,7 @@ $("#submit").click(function () {
         );
     } else {
         $("#instagram").css('border-color', '');
+        instagramValidation = true;
     }
 
     //Validation for facebook page
@@ -94,18 +112,31 @@ $("#submit").click(function () {
         );
     } else {
         $("#facebook").css('border-color', '');
+        facebookValidation = true;
     }
 
-    //Validation for Username
-    if (!$('#username').val()) {
-        $("#username").css('border-color', 'red');
-        $("#username").notify(
-            "Please Fill In Your Username", {
-                position: "right"
+    //Validation for email
+    var regexEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+    //Validation for Email
+    if (!$('#email').val()) {
+        $("#email").css('border-color', 'red');
+        $("#email").notify(
+            "Please Fill In Your Email", {
+                position: "right",
+                autoHideDelay: 1200,
+            }
+        );
+    } else if (!regexEmail.test($('#email').val())) {
+        $("#email").css('border-color', 'red');
+        $("#email").notify(
+            "Not a Valid Email", {
+                position: "right",
+                autoHideDelay: 1200,
             }
         );
     } else {
-        $("#username").css('border-color', '');
+        $("#email").css('border-color', '');
+        emailValidation = true;
     }
 
     //Validation for Password
@@ -118,6 +149,7 @@ $("#submit").click(function () {
         );
     } else {
         $("#password").css('border-color', '');
+        passwordValidation = true;
     }
 
     //Validation for Confirm Password
@@ -128,7 +160,7 @@ $("#submit").click(function () {
                 position: "right"
             }
         );
-    } else if (('#confirmPassword').val() != ('#password').val()) {
+    } else if ($('#confirmPassword').val() != $('#password').val()) {
         $("#confirmPassword").css('border-color', 'red');
         $("#confirmPassword").notify(
             "Password Mismatched !", {
@@ -137,5 +169,64 @@ $("#submit").click(function () {
         );
     } else {
         $("#confirmPassword").css('border-color', '');
+        confirmPasswordValidation = true;
     }
+
+    if (emailValidation) {
+        $.ajax({
+            type: "POST",
+            url: "checkUniqueEmailBrand",
+            data: {
+                email: $('#email').val()
+            },
+            success: function (result) {
+                if (!result.success) {
+                    $("#email").css('border-color', 'red');
+                    $("#email").notify(
+                        "Email has been taken", {
+                            position: "right",
+                            autoHideDelay: 1200,
+                        }
+                    );
+                } else {
+                    $("#email").css('border-color', '');
+                    uniqueEmailValidation = true;
+                    //Submit the form
+                    if (brandNameValidation &&
+                        industryValidation &&
+                        contactNoValidation &&
+                        addressValidation &&
+                        postalValidation &&
+                        unitNoValidation &&
+                        instagramValidation &&
+                        facebookValidation &&
+                        emailValidation &&
+                        passwordValidation &&
+                        confirmPasswordValidation) {
+                        $.ajax({
+                            type: "POST",
+                            url: "brandSignUp",
+                            data: {
+                                brandName: $('#brandName').val(),
+                                industry: $("#industry").val(),
+                                contactNo: $('#contactNo').val(),
+                                address: $('#address').val(),
+                                postal: $('#postal').val(),
+                                unitNo: $('#unitNo').val(),
+                                instagram: $('#instagram').val(),
+                                facebook: $('#facebook').val(),
+                                email: $('#email').val(),
+                                password: $('#password').val()
+                            },
+                            success: function (msg) {
+                                alert('Success');
+                                window.location = "/index-brand";
+                            }
+                        })
+                    }
+                }
+            }
+        })
+    };
+
 });

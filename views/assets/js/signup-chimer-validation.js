@@ -5,10 +5,9 @@ $("#submit").click(function (e) {
         genderValidation = false,
         birthdayValidation = false,
         mobileNoValidation = false,
-        usernameValidation = false,
         passwordValidation = false,
         confirmPasswordValidation = false,
-        uniqueUsernameValidation = false;
+        uniqueEmailValidation = false;
 
     //Validation for First Name
     if (!$('#firstName').val()) {
@@ -103,20 +102,6 @@ $("#submit").click(function (e) {
         mobileNoValidation = true;
     }
 
-    //Validation for Username
-    if (!$('#username').val()) {
-        $("#username").css('border-color', 'red');
-        $("#username").notify(
-            "Please Fill In Your Username", {
-                position: "right",
-                autoHideDelay: 1200,
-            }
-        );
-    } else {
-        $("#username").css('border-color', '');
-        usernameValidation = true;
-    }
-
     //Validation for Password
     if (!$('#password').val()) {
         $("#password").css('border-color', 'red');
@@ -156,25 +141,25 @@ $("#submit").click(function (e) {
     }
 
     //Validating of unique username
-    if (usernameValidation) {
+    if (emailValidation) {
         $.ajax({
             type: "POST",
-            url: "checkUniqueUsername",
+            url: "checkUniqueEmailChimer",
             data: {
-                username: $('#username').val()
+                email: $('#email').val()
             },
             success: function (result) {
                 if (!result.success) {
-                    $("#username").css('border-color', 'red');
-                    $("#username").notify(
-                        "Username has been taken", {
+                    $("#email").css('border-color', 'red');
+                    $("#email").notify(
+                        "Email has been taken", {
                             position: "right",
                             autoHideDelay: 1200,
                         }
                     );
                 } else {
-                    $("#username").css('border-color', '');
-                    uniqueUsernameValidation = true;
+                    $("#email").css('border-color', '');
+                    uniqueEmailValidation = true;
                     //Submit the form
                     if (firstNameValidation &&
                         lastNameValidation &&
@@ -182,10 +167,9 @@ $("#submit").click(function (e) {
                         genderValidation &&
                         birthdayValidation &&
                         mobileNoValidation &&
-                        usernameValidation &&
                         passwordValidation &&
                         confirmPasswordValidation &&
-                        uniqueUsernameValidation) {
+                        uniqueEmailValidation) {
                         $.ajax({
                             type: "POST",
                             url: "chimerSignUp",
@@ -196,7 +180,6 @@ $("#submit").click(function (e) {
                                 gender: $('#gender').val(),
                                 birthday: $('#birthday').val(),
                                 mobileNo: $('#mobileNo').val(),
-                                username: $('#username').val(),
                                 password: $('#password').val()
                             },
                             success: function (msg) {
