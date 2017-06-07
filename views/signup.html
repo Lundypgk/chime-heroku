@@ -46,35 +46,35 @@
             </a>
         </div>
     </section>
-
     <!-- Get audit -->
     <section class="flat-row" style="background:#f9f9f9; padding:20px;">
         <div class="row-overlay"></div>
         <div class="container">
             <h1 class="title" style="text-align:center;">APPLY TO BE A <span class="blue">CHIMER</span></h1><br>
             <div class="mobile-form">
-                <input class="form-input" id="firstName" type="text" placeholder="First Name" onkeyup="this.value=this.value.replace(/[^a-z]/g,'');"
+                <input class="form-input" id="firstName" type="text" placeholder="First Name" name="firstName" onkeyup="this.value=this.value.replace(/[^a-z]/g,'');"
                 />
-                <input class="form-input" id="lastName" type="text" placeholder="Last Name" onkeyup="this.value=this.value.replace(/[^a-z]/g,'');"
+                <input class="form-input" id="lastName" type="text" placeholder="Last Name" name="lastName" onkeyup="this.value=this.value.replace(/[^a-z]/g,'');"
                 />
-                <input class="form-input2" id="email" type="email" placeholder="Email Address" />
+                <input class="form-input2" id="email" type="email" placeholder="Email Address" name="email" />
 
-                <select class="form-input" id="gender">
+                <select class="form-input" id="gender" name="gender">
                     <option value="">-- Select Gender --</option>
                     <option value="Male">Male</option>
                     <option value="Male">Female</option>
                     </select>
-                <input class="form-input" id="birthday" type="Date" placeholder="Birthday" />
-                <input class="form-input2" id="mobileno" type="number" maxlength="11" min="8" placeholder="Mobile Number" />
-                <input class="form-input2" id="username" type="text" placeholder="Username" />
+                <input class="form-input" id="birthday" type="Date" placeholder="Birthday" name="birthday" />
+                <input class="form-input2" id="mobileNo" type="number" maxlength="11" min="8" placeholder="Mobile Number" name="mobileNo"
+                />
+                <input class="form-input2" id="username" type="text" placeholder="Username" name="username" />
                 <input class="form-input2" id="password" type="Password" placeholder="Password" />
-                <input class="form-input2" id="confirmPassword" type="Password" placeholder="Confirm Password" />
+                <input class="form-input2" id="confirmPassword" type="Password" placeholder="Confirm Password" name="password" />
 
 
             </div>
 
             <div class="col-xs-12" style="text-align:center;">
-                <input class="btn btn-primary btn-submit" type="submit" text="Login" id="submit" /></a>
+                <input class="btn btn-primary btn-submit" type="submit" text="Login" id="submit" value="submit" /></a>
             </div>
         </div>
     </section>
@@ -88,10 +88,6 @@
 
 
     <!--END SIGNUP-->
-
-
-
-
 
     <!-- Latest jQuery -->
     <script src="assets/js/jquery-1.11.3.min.js"></script>
@@ -120,7 +116,7 @@
     <!-- scripts js -->
     <script src="assets/js/scripts.js"></script>
     <!-- Sign Up Validation -->
-    <script src="assets/js/signup-validation.js"></script>
+    <script src="assets/js/signup-chimer-validation.js"></script>
     <!-- Notify JS -->
     <script src="assets/js/notify.js"></script>
 </body>

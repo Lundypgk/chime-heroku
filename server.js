@@ -3,10 +3,17 @@ let express = require('express'),
     http = require('http'),
     path = require('path'),
     bodyParser = require('body-parser'),
+    bcrypt = require('bcrypt'),
     db;
 
 let viewDirectory = path.join(__dirname, 'views');
 let app = express();
+
+//Variable
+const saltRounds = 10;
+
+//Import Models
+let chimerModel = require('./models/chimer-signup');
 
 // app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
@@ -26,7 +33,13 @@ if (app.get('env') == 'development') {
 
 let MongoClient = require('mongodb').MongoClient;
 
-MongoClient.connect('mongodb://shengliang:chime@ds145009.mlab.com:45009/chime', (err, database) => {
+
+// Production
+// database: 'mongodb://shengliang:chime@ds145009.mlab.com:45009/chime'
+
+// Development
+//   database: 'mongodb://shengliang:chime@ds129038.mlab.com:29038/chimedev',
+MongoClient.connect('mongodb://shengliang:chime@ds129038.mlab.com:29038/chimedev', (err, database) => {
     if (err) return console.log(err)
     db = database
     app.listen(process.env.PORT || 3000, () => {
@@ -45,12 +58,26 @@ app.get('/login', function (req, res) {
 });
 
 app.post('/chimerSignUp', (req, res) => {
-    db.collection('chimeUser').save(req.body, (err, result) => {
-        if (err) return console.log(err);
+    bcrypt.hash(req.body.password, saltRounds, function (err, hash) {
+        // Store hash in your password DB. 
+        console.log(hash);
+        let chimer = new chimerModel(req.body.firstName,
+            req.body.lastName,
+            req.body.email,
+            req.body.gender,
+            req.body.birthday,
+            req.body.mobileNo,
+            req.body.username,
+            hash
+        )
+        db.collection('chimeUser').save(chimer, (err, result) => {
+            if (err) return console.log(err);
+            // res.status(200);
+            res.end();
+            // res.redirect('/index-chimer');
+        })
+    });
 
-        console.log('saved to database');
-        res.redirect('/signup.html');
-    })
 });
 
 app.post('/brandSignUp', (req, res) => {
