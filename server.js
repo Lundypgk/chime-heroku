@@ -57,6 +57,24 @@ app.get('/login', function (req, res) {
     res.sendFile(viewDirectory + '/login.html');
 });
 
+app.post('/checkUniqueUsername', (req, res) => {
+    db.collection('chimeUser').find({
+        username: req.body.username
+    }).toArray().then(function (results) {
+        console.log(results);
+        if (results.length > 0) {
+            res.json({
+                success: false
+            })
+        } else {
+            res.json({
+                success: true
+            })
+        }
+    });
+
+})
+
 app.post('/chimerSignUp', (req, res) => {
     bcrypt.hash(req.body.password, saltRounds, function (err, hash) {
         // Store hash in your password DB. 

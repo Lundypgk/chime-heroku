@@ -1,7 +1,3 @@
-$('#username').keyup(function () {
-    alert("Handler for .keyup() called.");
-});
-
 $("#submit").click(function (e) {
     var firstNameValidation = false,
         lastNameValidation = false,
@@ -11,7 +7,8 @@ $("#submit").click(function (e) {
         mobileNoValidation = false,
         usernameValidation = false,
         passwordValidation = false,
-        confirmPasswordValidation = false;
+        confirmPasswordValidation = false,
+        uniqueUsernameValidation = false;
 
     //Validation for First Name
     if (!$('#firstName').val()) {
@@ -158,32 +155,60 @@ $("#submit").click(function (e) {
         confirmPasswordValidation = true;
     }
 
-    if (firstNameValidation &&
-        lastNameValidation &&
-        emailValidation &&
-        genderValidation &&
-        birthdayValidation &&
-        mobileNoValidation &&
-        usernameValidation &&
-        passwordValidation &&
-        confirmPasswordValidation) {
+    //Validating of unique username
+    if (usernameValidation) {
         $.ajax({
             type: "POST",
-            url: "chimerSignUp",
+            url: "checkUniqueUsername",
             data: {
-                firstName: $('#firstName').val(),
-                lastName: $('#lastName').val(),
-                email: $('#email').val(),
-                gender: $('#gender').val(),
-                birthday: $('#birthday').val(),
-                mobileNo: $('#mobileNo').val(),
-                username: $('#username').val(),
-                password: $('#password').val()
+                username: $('#username').val()
             },
-            success: function (msg) {
-                alert('Success');
-                window.location = "/index-chime";
+            success: function (result) {
+                if (!result.success) {
+                    $("#username").css('border-color', 'red');
+                    $("#username").notify(
+                        "Username has been taken", {
+                            position: "right",
+                            autoHideDelay: 1200,
+                        }
+                    );
+                } else {
+                    $("#username").css('border-color', '');
+                    uniqueUsernameValidation = true;
+                    //Submit the form
+                    if (firstNameValidation &&
+                        lastNameValidation &&
+                        emailValidation &&
+                        genderValidation &&
+                        birthdayValidation &&
+                        mobileNoValidation &&
+                        usernameValidation &&
+                        passwordValidation &&
+                        confirmPasswordValidation &&
+                        uniqueUsernameValidation) {
+                        $.ajax({
+                            type: "POST",
+                            url: "chimerSignUp",
+                            data: {
+                                firstName: $('#firstName').val(),
+                                lastName: $('#lastName').val(),
+                                email: $('#email').val(),
+                                gender: $('#gender').val(),
+                                birthday: $('#birthday').val(),
+                                mobileNo: $('#mobileNo').val(),
+                                username: $('#username').val(),
+                                password: $('#password').val()
+                            },
+                            success: function (msg) {
+                                alert('Success');
+                                window.location = "/index-chime";
+                            }
+                        })
+                    }
+                }
             }
         })
     }
+
+
 });
