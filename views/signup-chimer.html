@@ -52,9 +52,9 @@
         <div class="container">
             <h1 class="title" style="text-align:center;">APPLY TO BE A <span class="blue">CHIMER</span></h1><br>
             <div class="mobile-form">
-                <input class="form-input" id="firstName" type="text" placeholder="First Name" name="firstName" onkeyup="this.value=this.value.replace(/[^a-z]/g,'');"
+                <input class="form-input" id="firstName" type="text" placeholder="First Name" name="firstName" onkeyup="this.value=this.value.replace(/[^a-z, ]/gi,'');"
                 />
-                <input class="form-input" id="lastName" type="text" placeholder="Last Name" name="lastName" onkeyup="this.value=this.value.replace(/[^a-z]/g,'');"
+                <input class="form-input" id="lastName" type="text" placeholder="Last Name" name="lastName" onkeyup="this.value=this.value.replace(/[^a-z, ]/gi,'');"
                 />
 
                 <select class="form-input" id="gender" name="gender">
