@@ -1,6 +1,5 @@
 ﻿<!DOCTYPE html>
 <html>
-
 <head>
     <!-- Meta -->
     <meta charset="utf-8">
@@ -36,7 +35,6 @@
     <!-- FAV ICON -->
     <link href="assets/img/Logos/bell.png" rel="shortcut icon">
 </head>
-
 <body>
     <!--START SIGNUP-->
     <section class="flat-row" style="height:65px; background:#fff; padding:0px;">
@@ -44,36 +42,36 @@
             <a href="index" rel="home">
                 <img style="height:100%;" src="assets/img/Logos/chimemaybe-black.png">
             </a>
-        </div>
+            </div>
     </section>
+
     <!-- Get audit -->
     <section class="flat-row" style="background:#f9f9f9; padding:20px;">
         <div class="row-overlay"></div>
         <div class="container">
             <h1 class="title" style="text-align:center;">APPLY TO BE A <span class="blue">CHIMER</span></h1><br>
             <div class="mobile-form">
-                <input class="form-input" id="firstName" type="text" placeholder="First Name" name="firstName" onkeyup="this.value=this.value.replace(/[^a-z, ]/gi,'');"
-                />
-                <input class="form-input" id="lastName" type="text" placeholder="Last Name" name="lastName" onkeyup="this.value=this.value.replace(/[^a-z, ]/gi,'');"
-                />
-
-                <select class="form-input" id="gender" name="gender">
+                <input class="form-input" type="text" placeholder="First Name" onkeyup="this.value=this.value.replace(/[^a-z]/g,'');" />
+                <input class="form-input" type="text" placeholder="Last Name" onkeyup="this.value=this.value.replace(/[^a-z]/g,'');"/>
+                <input class="form-input2" type="email"  placeholder="Email Address" />
+             
+                <select class="form-input">
                     <option value="">-- Select Gender --</option>
                     <option value="Male">Male</option>
                     <option value="Male">Female</option>
+
                     </select>
-                <input class="form-input" id="birthday" type="Date" placeholder="Birthday" name="birthday" />
-                <input class="form-input2" id="mobileNo" type="number" maxlength="11" min="8" placeholder="Mobile Number" name="mobileNo"
-                />
-                <input class="form-input2" id="email" type="email" placeholder="Email Address" name="email" />
-                <input class="form-input2" id="password" type="Password" placeholder="Password" />
-                <input class="form-input2" id="confirmPassword" type="Password" placeholder="Confirm Password" name="password" />
+                    <input class="form-input" type="Date" placeholder="Birthday" />
+                    <input class="form-input2" type="number" maxlength="11" min="8" placeholder="Mobile Number" />
+                    <input class="form-input2" type="text" placeholder="Username" />
+                    <input class="form-input2" type="Password" placeholder="Password" />
+                    <input class="form-input2" type="Password" placeholder="Confirm Password" />
 
 
-            </div>
+</div>
 
             <div class="col-xs-12" style="text-align:center;">
-                <input class="btn btn-primary btn-submit" type="submit" text="Login" id="submit" value="submit" /></a>
+                <a href="payment"><input class="btn btn-primary btn-submit" type="submit" text="Login" /></a>
             </div>
         </div>
     </section>
@@ -82,11 +80,15 @@
             <a href="index" rel="home">
                 <img style="height:100%;" src="assets/img/Logos/chimemaybe-black.png">
             </a>
-        </div>
+            </div>
     </section>
 
 
     <!--END SIGNUP-->
+
+
+
+
 
     <!-- Latest jQuery -->
     <script src="assets/js/jquery-1.11.3.min.js"></script>
@@ -114,10 +116,5 @@
     <script src="assets/js/switcher.js"></script>
     <!-- scripts js -->
     <script src="assets/js/scripts.js"></script>
-    <!-- Sign Up Validation -->
-    <script src="assets/js/signup-chimer-validation.js"></script>
-    <!-- Notify JS -->
-    <script src="assets/js/notify.js"></script>
 </body>
-
 </html>

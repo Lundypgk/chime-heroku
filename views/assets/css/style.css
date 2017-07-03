@@ -51,6 +51,9 @@ a {
     -webkit-transition: all 0.2s;
     transition: all 0.2s;
 }
+a.collapse{
+    color: #000;
+}
 a:hover {
     color: #fff;
     text-decoration: none;
@@ -1072,7 +1075,7 @@ width: 100%;
 /*START NEWSLETTER FORM*/
 .subscribe_input i {
     font-size: 60px;
-    margin-bottom: 30px;
+
 }
 .subscribe_input input {
     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
@@ -1492,11 +1495,14 @@ p span{
 }
 .navbar-brand img {
     width: 175px;
-    margin-top: -15px;
+    margin-top: -7px;
 }
 .mlogo-img {
     content:url("../../assets/img/Logos/chimemaybe-white.png");
 
+}
+img.mlogo-img {
+    margin-top: 0.1%;
 }
 .navbar.navbar-default.navbar-fixed-top.menu-top.menu-shrink img{
      content:url("../../assets/img/Logos/chimemaybe-black.png");
@@ -1564,4 +1570,16 @@ input.btn.btn-primary.btn-submit {
 .form-input:active, .form-input:hover,
 .form-input2:active, .form-input2:hover {
     border: 1px solid #facb1b;
+}
+
+/* bootstraps edits*/
+.panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: inherit;
+    color: #000;
+}
+i.fa.fa-linkedin {
+    background: #069;
 }
